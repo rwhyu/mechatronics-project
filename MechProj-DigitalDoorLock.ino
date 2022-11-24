@@ -361,13 +361,13 @@ void BlynkTask(void* pvParameters){
 void setup()
 { 
   M5.begin(); //
-  Wire.begin();
-  Blynk.begin(auth, ssid, pass);
+  Wire.begin();   
+  Blynk.begin(auth, ssid, pass);            //star blynk and connect to wifi
   timer.setInterval(1000L, myTimerEvent);   //set timer to run function every 1 sec
   timer.setInterval(1000L, sendSensor);     //set timer to run function every 1 sec
   timer.setInterval(1000L, Light);          //set timer to run function every 1 sec
   timer.setInterval(1000L, Fan);            //set timer to run function every 1 sec
-  LINE.setToken(LINE_TOKEN);
+  LINE.setToken(LINE_TOKEN);                //set line token to connect to line api
   //LINE.notify(String("M5 start "));
   pinMode(25,OUTPUT); // Define pin 25 as output data
   pinMode(26,OUTPUT); // Define pin 26 as output data
